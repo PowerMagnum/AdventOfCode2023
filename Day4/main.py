@@ -1,4 +1,4 @@
-with open("example1.txt","r") as file:
+with open("input.txt","r") as file:
     data = file.readlines()
 
 def first(data:str):
@@ -15,7 +15,7 @@ def first(data:str):
         for val in winners:
             if val in mine:
                 v_line = 1 if (not int(v_line)) else int(v_line)*2
-                print(f"[{val}] -> {v_line}") 
+                #print(f"[{val}] -> {v_line}") 
         tot += int(v_line)
     return tot
 
@@ -29,14 +29,18 @@ def second(data):
         mine = mine.split()
         for val in winners:
             if val in mine:
-                v_line = 1 if (not int(v_line)) else int(v_line)*2
-                print(f"[{val}] -> {v_line}") 
-        for k in range(toDo[data.index(data[l])]):
+                v_line += 1
+                #print(f"[{val}] -> {v_line}")
+        #print(f"Riga[{l}]: {v_line} pt.") 
+        #print(f"   ToDo: {toDo[l]}")
+        for _ in range(toDo[l]):
             for i in range(v_line):
-                print(l, " ", i)
-                toDo[l + i] += 1 
-    print(toDo)  
+                #print(l, " ", i)
+                toDo[l + i + 1] += 1 
+        #print(f"   New ToDoList: {toDo}")
+    #print(toDo)
+    return sum(toDo)
     #return tot
 
-#print(first(data))
-second(data)
+print("Q1:", first(data))
+print("Q2:", second(data))
