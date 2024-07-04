@@ -1,0 +1,40 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: cornflowerblue;
+    background-image: linear-gradient(to bottom , cornflowerblue, dodgerblue);
+    /*background-repeat: no-repeat;
+    background-size: cover;*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Login-form{
+    background-color: white;
+    background-image: linear-gradient(to bottom , white, lightblue);
+    border-radius: 50px;
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#Login-form *{
+    margin: 10px;
+    border-radius: 5px;
+}
